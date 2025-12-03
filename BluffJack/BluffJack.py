@@ -73,13 +73,17 @@ def tot():
     print(f"{current[3]}: {current}, {other[3]}: {other}")
 
 def draw(player, amount):
-    if len(deck) > 0:
-        for _ in range(amount):
-            drawn = random.choice(deck)
-            player[0].append(drawn)
-            deck.remove(drawn)
-    else:
-        print("Empty deck!")
+    if player[1] > goal:
+        print("Busted! You may not draw a card")
+        print(goal)
+    else: 
+        if len(deck) > 0:
+            for _ in range(amount):
+                drawn = random.choice(deck)
+                player[0].append(drawn)
+                deck.remove(drawn)
+        else:
+            print("Empty deck!")
     tot()
 
 if __name__ == "__main__":
