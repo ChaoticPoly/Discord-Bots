@@ -1,4 +1,9 @@
+from itertools import count
+import discord
+from discord.ext import commands
 import random
+from dotenv import load_dotenv
+import os
 
 def turn():
     global stands, other, current
